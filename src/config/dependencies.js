@@ -1,9 +1,7 @@
 import AccountsRepositoryInMemory from "../accounts/repositories/InMemoryRepository";
 
 const buildDependencies = () => {
-    const dependencies = {
-    };
-
+    const dependencies = {};
     if (process.env.DATABASE_DIALECT === "in-memory") {
         dependencies.accountsRepository = new AccountsRepositoryInMemory();
     } else if (process.env.DATABASE_DIALECT === "mongo") {
