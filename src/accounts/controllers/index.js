@@ -29,10 +29,21 @@ export default (dependencies) => {
         }
     };
 
+    const authenticateAccount = async (request, response) => {
+        try {
+            const { email, password } = request.body;
+            const token = await accountService.authenticate(email, password, dependencies);
+            response.status(200).json({ token: `BEARER ${token}` });
+        } catch (error) {
+            response.status(401).json({ message: 'Unauthorised' });
+        }
+    };
+
     return {
         createAccount,
         getAccount,
         listAccounts,
         updateAccount,
+        authenticateAccount,
     };
 };
