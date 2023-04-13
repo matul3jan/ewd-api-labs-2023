@@ -14,6 +14,7 @@ export default {
                 if (process.env.NODE_ENV == "development") {
                     const collections = await connection.db.listCollections().toArray();
                     collections.forEach((c) => connection.dropCollection(c.name));
+                    console.info("Cleared all collections!");
                 }
             });
 
