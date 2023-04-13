@@ -24,5 +24,14 @@ export default {
         if (!result) throw new Error('Bad credentials');
         const token = JSON.stringify({ email: account.email }); // TODO: make it better
         return token;
+    },
+    getFavourites: async (accountId, { accountsRepository }) => {
+        const account = await accountsRepository.get(accountId);
+        return account.favourites;
+    },
+    addFavourite: async (accountId, movieId, { accountsRepository }) => {
+        const account = await accountsRepository.get(accountId);
+        account.favourites.push(movieId);
+        return await accountsRepository.merge(account);
     }
 };
