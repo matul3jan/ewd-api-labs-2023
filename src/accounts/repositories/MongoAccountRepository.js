@@ -19,9 +19,13 @@ export default class extends AccountRepository {
     async persist(accountEntity) {
         const { firstName, lastName, email, password } = accountEntity;
         const result = new this.model({ firstName, lastName, email, password });
-        await result.save();
-        accountEntity.id = result.id;
-        return accountEntity;
+        try {
+            await result.save();
+            accountEntity.id = result.id;
+            return accountEntity;
+        } catch (error) {
+            return error;
+        }
     }
 
     async merge(accountEntity) {
@@ -42,7 +46,7 @@ export default class extends AccountRepository {
     }
 
     async getByEmail(userEmail) {
-        const result = await this.model.findOne({ email: userEmail });
+        const result = await this.model.findOne({ email: userEmail.toLowerCase() });
         return new Account(result.id, result.firstName, result.lastName, result.email, result.password, result.favourites);
     }
 

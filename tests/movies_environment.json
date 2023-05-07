@@ -1,0 +1,15 @@
+{
+	"id": "f7d1bc68-0fab-4d9b-ad70-3417bd5b1b44",
+	"name": "Local Test Environment",
+	"values": [
+		{
+			"key": "url",
+			"value": "http://localhost:8080",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2023-05-07T11:04:17.690Z",
+	"_postman_exported_using": "Postman/10.13.5"
+}

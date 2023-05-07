@@ -4,7 +4,11 @@ export default (dependencies) => {
     const createAccount = async (request, response) => {
         const { firstName, lastName, email, password } = request.body;
         const account = await accountService.registerAccount(firstName, lastName, email, password, dependencies);
-        response.status(201).json(account);
+        if (account instanceof Error) {
+            response.status(500).json({ error: account.message });
+        } else {
+            response.status(201).json(account);
+        }
     };
 
     const getAccount = async (request, response) => {
@@ -35,19 +39,19 @@ export default (dependencies) => {
             const token = await accountService.authenticate(email, password, dependencies);
             response.status(200).json({ token: `BEARER ${token}` });
         } catch (error) {
-            response.status(401).json({ message: 'Unauthorised' });
+            response.status(401).json({ error: 'Unauthorised' });
         }
     };
 
     const verify = async (request, response, next) => {
         try {
             const authHeader = request.headers.authorization;
-            const accessToken = authHeader.split(" ")[1];
+            const accessToken = authHeader ? authHeader.split(" ")[1] : null;
             await accountService.verifyToken(accessToken, dependencies);
             next();
         } catch (err) {
             //Token Verification Failed
-            response.status(401).json({ message: 'Unauthorised' });
+            response.status(401).json({ error: 'Unauthorised' });
             next(new Error(`Verification Failed ${err.message}`));
         }
     };
