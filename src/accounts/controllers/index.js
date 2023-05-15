@@ -24,7 +24,7 @@ export default (dependencies) => {
 
     const updateAccount = async (request, response) => {
         try {
-            const id = +request.params.id;
+            const id = request.params.id;
             const { firstName, lastName, email, password } = request.body;
             const account = await accountService.updateAccount(id, firstName, lastName, email, password, dependencies);
             response.status(200).json(account);
@@ -36,8 +36,9 @@ export default (dependencies) => {
     const authenticateAccount = async (request, response) => {
         try {
             const { email, password } = request.body;
-            const token = await accountService.authenticate(email, password, dependencies);
-            response.status(200).json({ token: `BEARER ${token}` });
+            const { token, account } = await accountService.authenticate(email, password, dependencies);
+            delete account.password;
+            response.status(200).json({ token: `BEARER ${token}`, user: account });
         } catch (error) {
             response.status(401).json({ error: 'Unauthorised' });
         }

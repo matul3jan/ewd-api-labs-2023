@@ -15,8 +15,7 @@ export default {
     findByEmail: (email, { accountsRepository }) => {
         return accountsRepository.getByEmail(email);
     },
-    updateAccount: async (id, firstName, lastName, email, password, { accountsRepository, authenticator }) => {
-        password = await authenticator.encrypt(password);
+    updateAccount: async (id, firstName, lastName, email, password, { accountsRepository }) => {
         const account = new Account(id, firstName, lastName, email, password);
         return accountsRepository.merge(account);
     },
@@ -25,7 +24,7 @@ export default {
         const result = await authenticator.compare(password, account.password);
         if (!result) throw new Error('Bad credentials');
         const token = tokenManager.generate({ email: account.email });
-        return token;
+        return { token, account };
     },
     verifyToken: async (token, { accountsRepository, tokenManager }) => {
         const decoded = await tokenManager.decode(token);
