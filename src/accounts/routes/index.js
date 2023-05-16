@@ -11,8 +11,9 @@ const createRouter = (dependencies) => {
     router.route('/').post(validationController.validateAccount, accountsController.createAccount);
     router.route('/:id').get(accountsController.getAccount);
     router.route('/:id').put(accountsController.updateAccount);
-    router.route('/:id/favourites').post(accountsController.addFavourite);
     router.route('/:id/favourites').get(accountsController.getFavourites);
+    router.route('/:id/favourites').post(accountsController.addFavourite);
+    router.route('/:id/favourites').delete(accountsController.removeFavourite);
     router.route('/security/token').post(accountsController.authenticateAccount);
 
     return router;

@@ -8,6 +8,7 @@ export default class extends GenreRepository {
     constructor() {
         super();
         const genresSchema = new mongoose.Schema({
+            id: Number,
             name: String,
         });
         this.model = mongoose.model('Genre', genresSchema);

@@ -1,6 +1,6 @@
-import AccountRepository from './Repository';
+import GenreRepository from './Repository';
 
-export default class extends AccountRepository {
+export default class extends GenreRepository {
     constructor() {
         super();
         this.index = 1;

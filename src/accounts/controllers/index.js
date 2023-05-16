@@ -68,6 +68,17 @@ export default (dependencies) => {
         }
     };
 
+    const removeFavourite = async(request, response, next) => {
+        try {
+            const { movieId } = request.body;
+            const id = request.params.id;
+            const account = await accountService.removeFavourite(id, movieId, dependencies);
+            response.status(200).json(account);
+        } catch (err) {
+            next(new Error(`Invalid Data ${err.message}`));
+        }
+    };
+
     const getFavourites = async (request, response, next) => {
         try {
             const id = request.params.id;
@@ -86,6 +97,7 @@ export default (dependencies) => {
         authenticateAccount,
         verify,
         addFavourite,
+        removeFavourite,
         getFavourites
     };
 };
