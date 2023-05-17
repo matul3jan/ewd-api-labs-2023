@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "profile_path": {
+      "type": "string"
+    },
+    "adult": {
+      "type": "boolean"
+    },
+    "known_for": {
+      "type": "array",
+      "items": {}
+    },
+    "name": {
+      "type": "string"
+    },
+    "popularity": {
+      "type": "number"
+    }
+  }
+}

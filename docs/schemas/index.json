@@ -1,0 +1,17 @@
+{
+    "Account": {
+        "$ref": "./account.json"
+    },
+    "Artist": {
+        "$ref": "./artist.json"
+    },
+    "Genre": {
+        "$ref": "./genre.json"
+    },
+    "Language": {
+        "$ref": "./language.json"
+    },
+    "Movie": {
+        "$ref": "./movie.json"
+    }
+}

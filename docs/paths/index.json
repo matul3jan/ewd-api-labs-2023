@@ -1,0 +1,86 @@
+{
+  "/api/accounts": {
+    "post": {
+      "$ref": "./account/create.json"
+    }
+  },
+  "/api/accounts/{id}": {
+    "get": {
+      "$ref": "./account/read.json"
+    },
+    "put": {
+      "$ref": "./account/update.json"
+    }
+  },
+  "/api/accounts/{id}/favourites": {
+    "get": {
+      "$ref": "./favourite/read.json"
+    },
+    "post": {
+      "$ref": "./favourite/create.json"
+    },
+    "delete": {
+      "$ref": "./favourite/delete.json"
+    }
+  },
+  "/api/accounts/security/token": {
+    "post": {
+      "$ref": "./account/auth.json"
+    }
+  },
+  "/api/artists": {
+    "get": {
+      "$ref": "./artist/read.json"
+    }
+  },
+  "/api/artists/{id}": {
+    "get": {
+      "$ref": "./artist/read-details.json"
+    }
+  },
+  "/api/genres": {
+    "get": {
+      "$ref": "./genre/read.json"
+    }
+  },
+  "/api/languages": {
+    "get": {
+      "$ref": "./language/read.json"
+    }
+  },
+  "/api/movies": {
+    "get": {
+      "$ref": "./movie/read.json"
+    }
+  },
+  "/api/movies/{id}": {
+    "get": {
+      "$ref": "./movie/read-details.json"
+    }
+  },
+  "/api/movies/{id}/images": {
+    "get": {
+      "$ref": "./movie/read-images.json"
+    }
+  },
+  "/api/movies/{id}/reviews": {
+    "get": {
+      "$ref": "./movie/read-reviews.json"
+    }
+  },
+  "/api/movies/{id}/recommendations": {
+    "get": {
+      "$ref": "./movie/read-recommendations.json"
+    }
+  },
+  "/api/movies/{id}/similar": {
+    "get": {
+      "$ref": "./movie/read-similar.json"
+    }
+  },
+  "/api/movies/{id}/credits": {
+    "get": {
+      "$ref": "./movie/read-credits.json"
+    }
+  }
+}

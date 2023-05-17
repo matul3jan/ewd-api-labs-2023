@@ -1,5 +1,7 @@
 import dotenv from 'dotenv';
 import express from 'express';
+import swaggerUi from 'swagger-ui-express';
+import openApiDocumentation from "./openapi.json";
 
 import db from './src/config/db';
 import buildDependencies from "./src/config/dependencies";
@@ -21,6 +23,8 @@ const startServer = async () => {
     const port = process.env.PORT;
 
     app.use(express.json());
+
+    app.use('/docs', swaggerUi.serve, swaggerUi.setup(openApiDocumentation));
 
     app.use('/api/accounts', createAccountsRouter(dependencies));
     app.use('/api/movies', createMoviesRouter(dependencies));

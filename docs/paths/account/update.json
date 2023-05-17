@@ -1,0 +1,46 @@
+{
+  "tags": [
+    "account"
+  ],
+  "description": "Update account details",
+  "parameters": [
+    {
+      "name": "id",
+      "in": "path",
+      "schema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "requestBody": {
+    "description": "Request parameters in JSON format",
+    "required": true,
+    "content": {
+      "application/json": {
+        "schema": {
+          "type": "object",
+          "properties": {
+            "firstName": {
+              "type": "string"
+            },
+            "lastName": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "responses": {
+    "200": {
+      "$ref": "../../responses/success.json"
+    },
+    "400": {
+      "$ref": "../../responses/bad-request.json"
+    },
+    "500": {
+      "$ref": "../../responses/internal-server-error.json"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "tags": [
+    "artist"
+  ],
+  "description": "Fetch artist details",
+  "parameters": [
+    {
+      "name": "id",
+      "in": "path",
+      "schema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "responses": {
+    "200": {
+      "$ref": "../../responses/success.json"
+    },
+    "500": {
+      "$ref": "../../responses/internal-server-error.json"
+    }
+  }
+}

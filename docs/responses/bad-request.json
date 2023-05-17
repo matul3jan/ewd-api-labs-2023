@@ -1,0 +1,22 @@
+{
+  "description": "Response for operation failure",
+  "content": {
+    "application/json": {
+      "schema": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "example": "Something went wrong!"
+          },
+          "item": {
+            "type": "object",
+            "enum": [
+              null
+            ]
+          }
+        }
+      }
+    }
+  }
+}

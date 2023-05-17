@@ -1,0 +1,43 @@
+{
+  "tags": [
+    "account"
+  ],
+  "description": "Remove favourite movie from account",
+  "parameters": [
+    {
+      "name": "id",
+      "in": "path",
+      "schema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "requestBody": {
+    "description": "Request parameters in JSON format",
+    "required": true,
+    "content": {
+      "application/json": {
+        "schema": {
+          "type": "object",
+          "required": [
+            "movieId"
+          ],
+          "properties": {
+            "movieId": {
+              "type": "number"
+            }
+          }
+        }
+      }
+    }
+  },
+  "responses": {
+    "200": {
+      "$ref": "../../responses/success.json"
+    },
+    "500": {
+      "$ref": "../../responses/internal-server-error.json"
+    }
+  }
+}

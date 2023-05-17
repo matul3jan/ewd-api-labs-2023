@@ -1,0 +1,50 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "poster_path": {
+      "type": "string"
+    },
+    "adult": {
+      "type": "boolean"
+    },
+    "overview": {
+      "type": "string"
+    },
+    "release_date": {
+      "type": "string"
+    },
+    "genre_ids": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "original_title": {
+      "type": "string"
+    },
+    "original_language": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "backdrop_path": {
+      "type": "string"
+    },
+    "popularity": {
+      "type": "number"
+    },
+    "vote_count": {
+      "type": "number"
+    },
+    "video": {
+      "type": "boolean"
+    },
+    "vote_average": {
+      "type": "number"
+    }
+  }
+}

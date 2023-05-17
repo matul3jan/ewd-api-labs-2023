@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "required": [
+    "id",
+    "name"
+  ],
+  "properties": {
+    "id": {
+      "type": "number",
+      "example": 28
+    },
+    "name": {
+      "type": "string",
+      "example": "Action"
+    }
+  }
+}

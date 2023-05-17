@@ -1,0 +1,14 @@
+{
+  "tags": [
+    "movie"
+  ],
+  "description": "Fetch popular movies listing",
+  "responses": {
+    "200": {
+      "$ref": "../../responses/success.json"
+    },
+    "500": {
+      "$ref": "../../responses/internal-server-error.json"
+    }
+  }
+}

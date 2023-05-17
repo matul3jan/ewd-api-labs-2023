@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "required": [
+    "iso_639_1",
+    "english_name",
+    "name"
+  ],
+  "properties": {
+    "iso_639_1": {
+      "type": "string",
+      "example": "en"
+    },
+    "english_name": {
+      "type": "string",
+      "example": "English"
+    },
+    "name": {
+      "type": "string",
+      "example": "English"
+    }
+  }
+}

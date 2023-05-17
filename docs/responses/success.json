@@ -1,0 +1,11 @@
+{
+  "description": "Response for operation successful",
+  "content": {
+    "application/json": {
+      "schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  }
+}

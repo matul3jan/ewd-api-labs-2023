@@ -1,0 +1,22 @@
+{
+  "description": "Response for internal server error",
+  "content": {
+    "application/json": {
+      "schema": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "example": "Something went wrong in the internal server!"
+          },
+          "item": {
+            "type": "object",
+            "enum": [
+              null
+            ]
+          }
+        }
+      }
+    }
+  }
+}

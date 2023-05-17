@@ -1,0 +1,48 @@
+{
+  "tags": [
+    "account"
+  ],
+  "description": "Creates a new account",
+  "requestBody": {
+    "description": "Request parameters in JSON format",
+    "required": true,
+    "content": {
+      "application/json": {
+        "schema": {
+          "type": "object",
+          "required": [
+            "firstName",
+            "lastName",
+            "email",
+            "password"
+          ],
+          "properties": {
+            "firstName": {
+              "type": "string"
+            },
+            "lastName": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "password": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "responses": {
+    "201": {
+      "$ref": "../../responses/success.json"
+    },
+    "400": {
+      "$ref": "../../responses/bad-request.json"
+    },
+    "500": {
+      "$ref": "../../responses/internal-server-error.json"
+    }
+  }
+}
