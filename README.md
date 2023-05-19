@@ -59,6 +59,8 @@ To auto generate the documentation (a file openapi.json at project root level), 
   ```bat
   npm run docs:generate
   ```
+  
+<img width="600" height="400" alt="image" src="https://github.com/matul3jan/ewd-api-labs-2023/assets/26350749/f2085553-ad9a-47dc-8282-1141d73d7a53">
 
 ## Security and Authentication
 
@@ -80,11 +82,15 @@ All tests were written in modularised form, grouped based on context - [tests](h
 
 Test report - [here](https://tmdb-client-api.onrender.com/test-report)
 
+<img width="600" width="400" alt="image" src="https://github.com/matul3jan/ewd-api-labs-2023/assets/26350749/5f81606d-e448-4905-8446-3794b5a7fa46">
+
 ## API Analytics
 
 API Metrics monitoring dashboard was created using [express-status-monitor](https://www.npmjs.com/package/express-status-monitor)
 
 Analytics Dashboard - [here](https://tmdb-client-api.onrender.com/status)
+
+<img src="https://github.com/matul3jan/ewd-api-labs-2023/assets/26350749/4d518683-2f93-4665-9010-5e40d26c0a8d" width="600" height="400" alt="image">
 
 ## Integrating with React App
 
