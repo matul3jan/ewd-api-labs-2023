@@ -1,5 +1,7 @@
 import express from 'express';
 import swaggerUi from 'swagger-ui-express';
+import winston from 'winston';
+
 import openApiDocumentation from "./openapi.json";
 import buildDependencies from "./src/config/dependencies";
 import errorHandler from './src/utils/ErrorHandler';
@@ -11,6 +13,18 @@ import createArtistsRouter from './src/artists/routes';
 
 const dependencies = buildDependencies();
 const app = express();
+const logger = winston.createLogger({
+    transports: [
+        new winston.transports.Console(),
+        new winston.transports.File({ filename: 'app.log' })
+    ]
+});
+
+// Middleware to log requests
+app.use((req, res, next) => {
+    logger.info(`${req.method} ${req.url}`);
+    next();
+});
 
 app.use(express.json());
 
