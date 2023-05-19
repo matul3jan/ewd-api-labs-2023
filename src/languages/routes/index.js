@@ -1,6 +1,6 @@
 import express from 'express';
-import LanguagesController from '../controllers';
-import AccountsController from '../../accounts/controllers';
+import LanguagesController from '../controllers/index.js';
+import AccountsController from '../../accounts/controllers/index.js';
 
 const createRouter = (dependencies) => {
     const router = express.Router();

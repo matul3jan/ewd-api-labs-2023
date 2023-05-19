@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
-import Account from '../../accounts/entities/Account';
-import AccountRepository from './Repository';
+import Account from '../../accounts/entities/Account.js';
+import AccountRepository from './Repository.js';
 
 export default class extends AccountRepository {
 

@@ -1,4 +1,4 @@
-import accountService from "../services";
+import accountService from "../services/index.js";
 
 export default (dependencies) => {
     const createAccount = async (request, response) => {

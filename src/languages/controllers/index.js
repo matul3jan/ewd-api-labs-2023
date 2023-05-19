@@ -1,4 +1,4 @@
-import languagesService from "../services";
+import languagesService from "../services/index.js";
 
 export default () => {
     const listLanguages = async (request, response) => {

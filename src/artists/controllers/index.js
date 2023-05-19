@@ -1,4 +1,4 @@
-import artistsService from "../services";
+import artistsService from "../services/index.js";
 
 export default () => {
     const listArtists = async (request, response) => {

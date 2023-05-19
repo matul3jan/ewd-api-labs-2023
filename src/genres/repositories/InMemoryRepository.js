@@ -1,4 +1,4 @@
-import GenreRepository from './Repository';
+import GenreRepository from './Repository.js';
 
 export default class extends GenreRepository {
     constructor() {

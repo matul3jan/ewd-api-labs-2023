@@ -3,11 +3,10 @@ import request from "supertest";
 
 dotenv.config();
 
+const app = request((await import('../app.js')).default);
 let artistId;
 
 describe("GET /api/artists", () => {
-
-    const app = request(require("../app"));
 
     it("should return all artists", async () => {
         const res = await app.get("/api/artists");

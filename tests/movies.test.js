@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const app = request(require("../app"));
+const app = request((await import('../app.js')).default);
 let movieId;
 
 describe("GET /api/movies", () => {

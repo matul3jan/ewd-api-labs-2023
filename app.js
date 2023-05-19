@@ -2,15 +2,17 @@ import express from 'express';
 import swaggerUi from 'swagger-ui-express';
 import winston from 'winston';
 import path from 'path';
+import { readFileSync } from "fs";
 
-import openApiDocumentation from "./openapi.json";
-import buildDependencies from "./src/config/dependencies";
-import errorHandler from './src/utils/ErrorHandler';
-import createAccountsRouter from './src/accounts/routes';
-import createMoviesRouter from './src/movies/routes';
-import createGenresRouter from './src/genres/routes';
-import createLanguagesRouter from './src/languages/routes';
-import createArtistsRouter from './src/artists/routes';
+import buildDependencies from "./src/config/dependencies.js";
+import errorHandler from './src/utils/ErrorHandler.js';
+import createAccountsRouter from './src/accounts/routes/index.js';
+import createMoviesRouter from './src/movies/routes/index.js';
+import createGenresRouter from './src/genres/routes/index.js';
+import createLanguagesRouter from './src/languages/routes/index.js';
+import createArtistsRouter from './src/artists/routes/index.js';
+
+const openApiDocumentation = JSON.parse(readFileSync("./package.json"));
 
 const dependencies = buildDependencies();
 const app = express();
@@ -45,4 +47,4 @@ app.get('/test-report', (req, res) => {
 
 app.use(errorHandler); // Keep it last to catch all errors that may occur in the middleware stack
 
-module.exports = app;
+export default app;

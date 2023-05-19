@@ -8,7 +8,7 @@ dotenv.config();
 
 beforeAll(async () => {
     await mongoose.connect(process.env.TEST_DATABASE_URL);
-    app = request(require("../app"));
+    app = request((await import('../app.js')).default);
 });
 
 afterAll(async () => {

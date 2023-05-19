@@ -1,4 +1,4 @@
-import genreService from "../services";
+import genreService from "../services/index.js";
 
 export default (dependencies) => {
     const listGenres = async (request, response) => {

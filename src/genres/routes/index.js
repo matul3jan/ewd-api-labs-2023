@@ -1,5 +1,5 @@
 import express from 'express';
-import GenresController from '../controllers';
+import GenresController from '../controllers/index.js';
 
 const createRouter = (dependencies) => {
     const router = express.Router();

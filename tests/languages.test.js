@@ -3,9 +3,9 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-describe("GET /api/languages", () => {
+const app = request((await import('../app.js')).default);
 
-    const app = request(require("../app"));
+describe("GET /api/languages", () => {
 
     it("should return all languages", async () => {
         const res = await app.get("/api/languages");

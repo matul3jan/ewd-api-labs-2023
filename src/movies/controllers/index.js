@@ -1,4 +1,4 @@
-import moviesService from "./../services";
+import moviesService from "./../services/index.js";
 
 export default () => {
 

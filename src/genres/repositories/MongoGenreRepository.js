@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
-import Genre from '../../genres/entities/Genre';
-import GenreRepository from './Repository';
-import { genres } from '../genresData';
+import Genre from '../../genres/entities/Genre.js';
+import GenreRepository from './Repository.js';
+import { genres } from '../genresData.js';
 
 export default class extends GenreRepository {
 

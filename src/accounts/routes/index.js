@@ -1,6 +1,6 @@
 import express from 'express';
-import AccountsController from '../controllers';
-import ValidationController from '../controllers/ValidationController';
+import AccountsController from '../controllers/index.js';
+import ValidationController from '../controllers/ValidationController.js';
 
 const createRouter = (dependencies) => {
     const router = express.Router();

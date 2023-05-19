@@ -1,4 +1,4 @@
-import Account from '../entities/Account';
+import Account from '../entities/Account.js';
 
 export default {
     registerAccount: async (firstName, lastName, email, password, { accountsRepository, authenticator }) => {
