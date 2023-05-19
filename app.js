@@ -2,6 +2,7 @@ import express from 'express';
 import swaggerUi from 'swagger-ui-express';
 import winston from 'winston';
 import path from 'path';
+import expressStatusMonitor from 'express-status-monitor';
 import { readFileSync } from "fs";
 import { fileURLToPath } from 'url';
 
@@ -29,6 +30,8 @@ app.use((req, res, next) => {
     logger.info(`${req.method} ${req.url}`);
     next();
 });
+
+app.use(expressStatusMonitor()); // Middlware for analytics
 
 app.use(express.json());
 
