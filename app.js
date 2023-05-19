@@ -13,7 +13,7 @@ import createGenresRouter from './src/genres/routes/index.js';
 import createLanguagesRouter from './src/languages/routes/index.js';
 import createArtistsRouter from './src/artists/routes/index.js';
 
-const openApiDocumentation = JSON.parse(readFileSync("./package.json"));
+const openApiDocumentation = JSON.parse(readFileSync("./openapi.json"));
 
 const dependencies = buildDependencies();
 const app = express();
