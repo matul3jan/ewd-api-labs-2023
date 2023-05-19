@@ -22,8 +22,12 @@ export default class extends GenreRepository {
         });
     }
 
-    loadGenres() {
-        this.model.deleteMany({});
-        this.model.insertMany(genres);
+    async loadGenres() {
+        try {
+            await this.model.deleteMany({});
+            await this.model.insertMany(genres);
+        } catch (error) {
+            console.error('Failed to load genres:', error);
+        }
     }
 }
