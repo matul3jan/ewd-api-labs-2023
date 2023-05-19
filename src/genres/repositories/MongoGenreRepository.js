@@ -23,6 +23,7 @@ export default class extends GenreRepository {
     }
 
     loadGenres() {
+        this.model.deleteMany({});
         this.model.insertMany(genres);
     }
 }
