@@ -3,6 +3,7 @@ import swaggerUi from 'swagger-ui-express';
 import winston from 'winston';
 import path from 'path';
 import { readFileSync } from "fs";
+import { fileURLToPath } from 'url';
 
 import buildDependencies from "./src/config/dependencies.js";
 import errorHandler from './src/utils/ErrorHandler.js';
@@ -41,6 +42,8 @@ app.use('/api/artists', createArtistsRouter(dependencies));
 
 // Route to serve the test report
 app.get('/test-report', (req, res) => {
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = path.dirname(__filename);
     const filePath = path.join(__dirname, 'tests', 'test-report.html');
     res.sendFile(filePath);
 });
