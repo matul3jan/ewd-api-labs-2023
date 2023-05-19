@@ -5,21 +5,6 @@
     "description": "API for TMDB Client application's Backend",
     "version": "1.0.0"
   },
-  "servers": [
-    {
-      "url": "http://{host}:{port}",
-      "description": "local server",
-      "variables": {
-        "host": {
-          "default": "localhost",
-          "description": "points to the application running locally"
-        },
-        "port": {
-          "default": "8080"
-        }
-      }
-    }
-  ],
   "components": {
     "schemas": {
       "Account": {
