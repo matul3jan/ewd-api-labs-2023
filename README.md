@@ -108,7 +108,7 @@ export const getMovies = (page) => fetcher(`/api/movies?page=${page}`)
 
 A middleware third party service [winston](https://github.com/winstonjs/winston) was used.
 
-<img width="747" alt="image" src="https://github.com/matul3jan/ewd-api-labs-2023/assets/26350749/cec82cdb-9760-499c-be6a-09c7f8dc655e">
+<img width="747" alt="image" src="https://github.com/matul3jan/ewd-api-labs-2023/assets/26350749/17445fac-dc8f-4afb-9e89-efd2d5fd1577">
 
 ## Deployment
 
